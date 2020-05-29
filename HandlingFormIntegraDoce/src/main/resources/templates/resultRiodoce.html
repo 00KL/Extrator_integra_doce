@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+	<!-- A fim de exibir de forma mais legivel a informação contida em riodoce.resposta(resposta do banco a consulta realizada) 
+	foi preciso utilizar certas funcoes de tratamento de string  -->
+    <p th:utext="${#strings.replace( #strings.escapeXml( riodoce.resposta ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" ></p>
+    
+    <a href="/riodoce">Submit another message</a>
+</body>
+</html>
